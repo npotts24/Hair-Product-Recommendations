@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";
+$servername = "localhost/Website/product_catalog/index.php";
 $username = "root";
 $password = "root";
 $dbname = "Customer";
