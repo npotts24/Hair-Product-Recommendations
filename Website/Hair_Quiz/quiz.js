@@ -1,27 +1,17 @@
 const quizData  = [
     {
-        question: ""
-        options: ["", "", "", ""]
-        answer: ""
+        question: "What is your hair texture?"
+        options: ["Straight", "Coily", "Wavy", "Curly"]
     },
     {
-        question: ""
-        options: ["", ""]
-        answer: ""
+        question: "What is your condition?"
+        options: ["Healthy", "Transitioning", "Mildy Damaged", "Damaged(Completely Ruined)"]
     }
     {
-        question: ""
-        options: ["", ""]
-        answer: ""
+        question: "What is your preferred hairstyle?"
+        options: ["Natural", "Weave/Wigs/Extensions", "Protective", "Heat-Styled"]
 
-    }
-    {
-        question: ""
-        options: ["", ""]
-        answer: ""
-
-
-    }
+    }  
 ];
 
 const questionElement = document.getElementById("question");
