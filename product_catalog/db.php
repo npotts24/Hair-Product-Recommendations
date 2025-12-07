@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost/product_catalog/index.php";
+$servername = "localhost";
 $username = "root";
 $password = "root";
-$dbname = "Customer";
+$dbname = "Customers";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
