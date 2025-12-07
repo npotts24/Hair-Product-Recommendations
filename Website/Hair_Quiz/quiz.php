@@ -1,15 +1,26 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Quiz</title>
 
-    $hair_type = $_POST["hair_type"];
-    $concern = $_POST["concern"];
-    $goal = $_POST["goal"];
+    
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
 
+    <div class="quiz-container">
+        <h2 id="question"></h2>
+        <div id="options"></div>
 
-    echo "<h1>Your Hair Quiz Results</h1>";
-    echo "<p><strong>Hair Type:</strong> $hair_type</p>";
-    echo "<p><strong>Concern:</strong> $concern</p>";
-    echo "<p><strong>Goal:</strong> $goal</p>";
+        <button id="submit" style="display:none;">Submit</button>
 
-   
-?>
+        <div id="result"></div>
+    </div>
+
+    
+    <script src="quiz.js"></script>
+</body>
+</html>
+
