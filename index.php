@@ -1,5 +1,5 @@
 <?php
 
-header("Location: /Dashboard_Home/home.html");
+header("Location: Hair-Product-Recommendations/Dashboard_Home/home.html");
 exit;
 ?>
