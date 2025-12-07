@@ -12,7 +12,37 @@ body.home .topnav a{
 }
 
 body.home h1{
-  font-size: 56px;
+  font-size: clamp(48px, 8vw, 120px);
+  line-height: 1;
+  margin: 20px 0;
+  color: white;
+  text-align: center;
+  font-family: 'Crimson Text', serif;
+  font-weight: 700;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 480px) {
+  body.home h1 {
+    font-size: 36px;
+  }
+}
+
+body.home h2 {
+  font-size: clamp(48px, 8vw, 120px);
+  line-height: 1.1;
+  margin: 12px 0 24px;
+  color: white;
+  text-align: center;
+  font-family: 'Crimson Text', serif;
+  font-weight: 600;
+  text-shadow: 1.5px 1.5px 4px rgba(0,0,0,0.25);
+}
+
+@media (max-width: 480px) {
+  body.home h2 {
+    font-size: 28px;
+  }
 }
 
 body.home .form-container {
