@@ -1,5 +1,5 @@
 <?php
-// Redirect to homepage file
-header("Location: site/Dashboard_Home/home.html");
+
+header("Location: /Dashboard_Home/home.html");
 exit;
 ?>
