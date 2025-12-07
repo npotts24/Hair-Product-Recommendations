@@ -3,33 +3,34 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$servername = "localhost";
-$firstname = "root";
-$lastname = "root";
-$username = "root";
-$password = "root"; // Default MAMP MySQL password
-$dbname = "Customers";
+require_once __DIR__ . '/../product_catalog/db.php';
 
-
-
-// Create connection
-$conn = new mysqli($servername, $firstname, $lastname, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $firstname = trim($_POST['firstname']);
-    $lastname = trim($_POST['lastname']);
-    $username = trim($_POST['username']);
-    $email = trim($_POST['email']);
-    $password = password_hash(trim($_POST['password']), PASSWORD_DEFAULT);
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        die("Invalid email format.");
+    $firstname = trim($_POST['firstname'] ?? '');
+    $lastname = trim($_POST['lastname'] ?? '');
+   
+    $user_username = trim($_POST['username'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $raw_password = trim($_POST['password'] ?? '');
+
+    if ($firstname === '' || $lastname === '' || $user_username === '' || $email === '' || $raw_password === '') {
+        die('All fields are required.');
     }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        die('Invalid email format.');
+    }
+
+    $passwordHash = password_hash($raw_password, PASSWORD_DEFAULT);
+
     $sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sss", $firstname, $lastname, $username, $email, $password);
+    if (!$stmt) {
+        die('Prepare failed: ' . $conn->error);
+    }
+
+  
+    $stmt->bind_param("sssss", $firstname, $lastname, $user_username, $email, $passwordHash);
 
     if ($stmt->execute()) {
         echo "Registration successful!";
@@ -38,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $stmt->close();
 }
+
 $conn->close();
 ?>
 

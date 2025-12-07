@@ -8,7 +8,7 @@ ini_set('display_errors', 1);
 <head>
     <meta charset="UTF-8">
     <title>Product Catalog</title>
-    <link rel="stylesheet" href="/product_catalog/styles.css">
+    <link rel="stylesheet" href="/Hair-Product-Recommendations/product_catalog/styles.css">
 </head>
 <body>
     <h1>Our Product Catalog</h1>

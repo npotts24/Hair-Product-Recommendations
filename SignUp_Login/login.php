@@ -1,24 +1,20 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "root"; // Default MAMP MySQL password
-$dbname = "Customers";
-
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// Login: use central DB connection and avoid variable name collisions
+require_once __DIR__ . '/../product_catalog/db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = trim($_POST['email']);
-    $password = trim($_POST['password']);
+    $email = trim($_POST['email'] ?? '');
+    $user_password = trim($_POST['password'] ?? '');
 
-
+    if ($email === '' || $user_password === '') {
+        die('Email and password are required.');
+    }
 
     $sql = "SELECT id, password FROM users WHERE email = ?";
     $stmt = $conn->prepare($sql);
+    if (!$stmt) {
+        die('Prepare failed: ' . $conn->error);
+    }
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
@@ -27,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_result($id, $hashed_password);
         $stmt->fetch();
 
-        if (password_verify($password, $hashed_password)) {
+        if (password_verify($user_password, $hashed_password)) {
             echo "Login successful!";
         } else {
             echo "Invalid credentials.";
@@ -37,5 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $stmt->close();
 }
+
 $conn->close();
 ?>

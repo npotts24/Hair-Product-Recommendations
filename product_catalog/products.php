@@ -1,5 +1,6 @@
 <?php
-include '/product_catalog/db.php';  // Including the database connection file
+
+include __DIR__ . '/db.php';
 
 // Prepare the SQL query to select product details
 $stmt = $conn->prepare("SELECT name, description, image_path FROM products");
