@@ -1,15 +1,15 @@
 const quizData  = [
     {
         question: "What is your hair texture?"
-        options: ["Straight", "Coily", "Wavy", "Curly"]
+        options: ["Straight", "Coily", "Wavy", "Curly"],
     },
     {
         question: "What is your condition?"
-        options: ["Healthy", "Transitioning", "Mildy Damaged", "Damaged(Completely Ruined)"]
+        options: ["Healthy", "Transitioning", "Mildy Damaged", "Damaged(Completely Ruined)"],
     }
     {
         question: "What is your preferred hairstyle?"
-        options: ["Natural", "Weave/Wigs/Extensions", "Protective", "Heat-Styled"]
+        options: ["Natural", "Weave/Wigs/Extensions", "Protective", "Heat-Styled"],
 
     }  
 ];
@@ -23,7 +23,7 @@ let score = 0;
 
 function showQuestion() {
     const question = quizData[currentQuestion];
-    questionElement.innerTest = question.question;
+    questionElement.innerText = question.question;
 
     optionsElement.innerHTML = "";
     question.options.forEach(option => {
