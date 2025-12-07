@@ -44,7 +44,7 @@ button {
   display: block;
   margin: 0 auto;
   padding: 10px 20px;
-  background-color: rgb(227, 238, 10), 245, 161);
+  background-color: rgb(227, 238, 10);
   color: #131313;
   border: none;
   border-radius: 5px;
@@ -54,3 +54,15 @@ button {
 button:hover {
   background-color: #8f8d8d;
 }
+
+
+.option-btn.selected {
+  outline: 3px solid rgba(255,255,255,0.12);
+  transform: translateY(-2px);
+}
+
+.quiz-block { max-width: 820px; width: 100%; background: rgba(255,255,255,0.04); padding: 18px; border-radius: 10px; margin-bottom: 18px; }
+.quiz-question { color: #fff; margin: 0 0 12px 0; }
+.quiz-options { display: flex; gap: 10px; flex-wrap: wrap; }
+.option-btn { padding: 10px 14px; border-radius: 999px; background: rgba(255,255,255,0.06); color: #fff; border: none; cursor: pointer; }
+.option-btn:hover { transform: translateY(-3px); }
