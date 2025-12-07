@@ -1,8 +1,19 @@
-body{
-    background-image: linear-gradient( #f3c4e6, #dac4f3 );
-
-
-
+body {
+  background-image: linear-gradient( 
+    rgba(248, 0, 166, 0.5),
+    rgba(162, 2, 233, 0.5),
+    rgba(9, 1, 255, 0.5));
+  min-height: 100%;
+  margin: 0;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  position: relative;
+  gap: 20px;
 }
 
 
