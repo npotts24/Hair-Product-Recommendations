@@ -1,52 +1,46 @@
-const quizData  = [
+const quizData = [
     {
-        question: "What is your hair texture?"
-        options: ["Straight", "Coily", "Wavy", "Curly"],
+        question: "What is your hair texture?",
+        options: ["Straight", "Coily", "Wavy", "Curly"]
     },
     {
-        question: "What is your condition?"
-        options: ["Healthy", "Transitioning", "Mildy Damaged", "Damaged(Completely Ruined)"],
-    }
+        question: "What is your hair condition?",
+        options: ["Healthy", "Transitioning", "Mildly Damaged", "Damaged (Completely Ruined)"]
+    },
     {
-        question: "What is your preferred hairstyle?"
-        options: ["Natural", "Weave/Wigs/Extensions", "Protective", "Heat-Styled"],
-
-    }  
+        question: "What is your preferred hairstyle?",
+        options: ["Natural", "Weave/Wigs/Extensions", "Protective", "Heat-Styled"]
+    }
 ];
 
 const questionElement = document.getElementById("question");
 const optionsElement = document.getElementById("options");
-const submitButton = document.getElementById("submit");
+const resultElement = document.getElementById("result");
 
 let currentQuestion = 0;
-let score = 0;
+let answers = [];
 
 function showQuestion() {
     const question = quizData[currentQuestion];
     questionElement.innerText = question.question;
 
     optionsElement.innerHTML = "";
+
     question.options.forEach(option => {
         const button = document.createElement("button");
         button.innerText = option;
+        button.classList.add("option-btn");
         optionsElement.appendChild(button);
-        button.addEventListener("click", selectAnswer);
 
-
+        button.addEventListener("click", () => selectAnswer(option));
     });
 }
 
-function selectAnswer(e) {
-    const selectedButton = e.target;
-    const answer = quizData[currentQuestion].answer;
-
-    if (selectedButton.innerText === answer) {
-        score++;
-    }
-
+function selectAnswer(selectedOption) {
+    answers.push(selectedOption);
     currentQuestion++;
 
-    if (currentQuestion < quizData.length){
+    if (currentQuestion < quizData.length) {
         showQuestion();
     } else {
         showResult();
@@ -54,10 +48,17 @@ function selectAnswer(e) {
 }
 
 function showResult() {
-    quizData.innerHTML = `
-        <h1>Quiz Completed!</h1>
-        <p>Your score: ${score}/${quizData.length}</p>
-    `;
+    questionElement.innerText = "Your Quiz Results!";
+    optionsElement.innerHTML = "";
+
+   
+   
+    resultElement.innerHTML = `
+        <h2>Answers You Selected:</h2>
+        <ul>
+            ${answers.map(a => `<li>${a}</li>`).join("")}
+        </ul>
+       `;
 }
 
 showQuestion();
