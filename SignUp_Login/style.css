@@ -1,4 +1,4 @@
-ul {
+topnav {
   list-style-type: none;
   margin: 20px 0;
   padding: 10px;
@@ -228,8 +228,6 @@ body {
   margin-bottom: 20px;
 }
 */
-
-
 
 
 .login-button {
