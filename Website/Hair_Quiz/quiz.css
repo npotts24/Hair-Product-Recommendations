@@ -27,21 +27,17 @@ body {
 
 h1 {
     text-align: center;
-    color: ;
+    color: #333333;
 }
 
 #question {
-
-
-
+    margin-bottom: 20px;
 }
 
 #options {
     display: grid;
     gap: 10px;
-
-
-
+    grid-template-columns: repeat(2, 1fr);
 }
 
 
