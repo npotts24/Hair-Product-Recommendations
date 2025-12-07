@@ -61,10 +61,10 @@ body.home h1{
 }
 
 body.home h2 {
-  font-size: clamp(48px, 8vw, 120px);
+  font-size: clamp(32px, 6vw, 72px);
   line-height: 1.1;
   margin: 12px 0 24px;
-  color: white;
+  color: #ffffff;
   text-align: center;
   font-family: 'Crimson Text', serif;
   font-weight: 600;
