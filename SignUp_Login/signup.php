@@ -8,7 +8,10 @@ $firstname = "root";
 $lastname = "root";
 $username = "root";
 $password = "root"; // Default MAMP MySQL password
-$dbname = "user_registration";
+$dbname = "Customers";
+
+
+
 // Create connection
 $conn = new mysqli($servername, $firstname, $lastname, $username, $password, $dbname);
 // Check connection
@@ -24,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         die("Invalid email format.");
     }
-    $sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sss", $firstname, $lastname, $username, $email, $password);
 

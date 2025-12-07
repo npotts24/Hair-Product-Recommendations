@@ -2,8 +2,9 @@
 $servername = "localhost";
 $username = "root";
 $password = "root"; // Default MAMP MySQL password
-$dbname = "user_registration";
-// Create connection
+$dbname = "Customers";
+
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
@@ -13,6 +14,8 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
+
+
 
     $sql = "SELECT id, password FROM users WHERE email = ?";
     $stmt = $conn->prepare($sql);
