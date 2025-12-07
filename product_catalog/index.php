@@ -8,7 +8,7 @@
 <body>
     <h1>Our Product Catalog</h1>
     <div class="product-container">
-        <?php include 'products.php'; ?>
+        <?php include 'Website/product_catalog/products.php'; ?>
     </div>
 </body>
 </html>
