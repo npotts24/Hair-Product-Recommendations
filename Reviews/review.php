@@ -1,0 +1,9 @@
+<?php
+CREATE TABLE reviews (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    rating INT NOT NULL,
+    review TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+>
