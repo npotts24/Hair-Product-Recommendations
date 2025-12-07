@@ -1,4 +1,4 @@
-topnav {
+body.home .topnav a{
   list-style-type: none;
   margin: 20px 0;
   padding: 10px;
@@ -9,6 +9,14 @@ topnav {
   border-radius: 25px;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.home h1{
+  font-size: 56px;
+}
+
+body.home .form-container {
+  display:none;
 }
 
 ul li {
