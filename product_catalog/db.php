@@ -1,13 +1,11 @@
 <?php
 $servername = "localhost";
-$username = "dev";
+$username = "";
 $dbname = "Customers";
 
 // Try password from environment first, then common local defaults.
 $candidates = [];
-$envPassword = getenv('DB_PASSWORD');
-if ($envPassword !== false) $candidates[] = $envPassword;
-$candidates = array_merge($candidates, array(''));
+
 
 $conn = null;
 $lastError = null;
