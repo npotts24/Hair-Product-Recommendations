@@ -8,10 +8,9 @@ My website solves the issue of having to go into a store and look through long s
 The website is not meant to be a place where users can perform transactions, it's more so meant to create recommendations, for example, producing a list of products that a customer might want to use based on the data they entered.
 
 
-Features Successfully Implemented:
-- Product List
-- Notifications
-- Reviews
+Features Implemented:
+- SignUp/Login
+- 
 
 
 Features Not Implemented:
@@ -19,7 +18,10 @@ Features Not Implemented:
 
 
 Bugs Or Limitations:
-- 
+- Currently lost access to the database.
 
 Credits:
-- 
+- MySQL Documentation
+- w3 Schools
+- zyBooks
+- GeeksForGeeks
